@@ -1,3 +1,14 @@
+-- Intoduction:
+-- In the wake of the unprecedented global pandemic caused by the novel coronavirus (COVID-19), data-driven insights have 
+-- become invaluable tools in understanding the complex dynamics of the virus's spread and impact. This project endeavors 
+-- to harness the power of SQL (Structured Query Language) to delve into the intricate world of COVID-19 data analysis. 
+-- By leveraging the wealth of information available, ranging from infection rates and testing efforts to vaccination 
+-- progress and mortality figures, this project aims to uncover patterns, trends, and correlations that shed light on 
+-- the virus's progression and its influence on societies worldwide. Through careful database design, precise querying, 
+-- and insightful visualization, this endeavor seeks to contribute to our understanding of the pandemic's effects, 
+-- ultimately aiding in decision-making, resource allocation, and public health strategies.
+
+
 -- 1. Since we have imported date column as a VARCHAR, we need to convert this column into 'DATE' type
 SELECT * FROM Covid.coviddeaths;
 
@@ -175,7 +186,7 @@ WHERE continent is NOT NULL
 GROUP BY date
 ORDER BY 1,2;
 
--- Joining coviddeaths and covidvaccinations tables
+-- Joining coviddeaths and covidvaccinations tables for overall inspection
  SELECT *
  FROM Covid.coviddeaths dea
  JOIN Covid.covidvaccinations vac
@@ -193,7 +204,7 @@ WHERE dea.continent IS NOT NULL
 ORDER BY 2,3;
  
  
- -- CTE
+ -- USING "CTE" to calculate rolling sum of people vaccinated
  
 WITH PopvsVac (Continent, Location, Date, Population, New_Vaccinations, RollingPeopleVaccinated)
 AS( 
@@ -212,7 +223,7 @@ ORDER BY 1,2,3;
  
  
  
- -- Temporary table
+ -- Creating Temporary table to store the rolling sum people vaccinated metric for future use
  
  DROP TABLE IF EXISTS Percent_People_Vaccinated;
  CREATE TABLE Percent_People_Vaccinated(
@@ -286,7 +297,19 @@ AND dea.date=vac.date
 WHERE dea.location='United States';
  
 
+-- Conclusion:
+-- We can observe that covid 19 virus had a significant impact on the world, infecting 766,917,644 people and causing death
+-- to nearly 7 million people! That's a death percentage of ~1% of infected people. This is truly an devastaing number of people 
+-- who have died. 
 
+-- This is result of governments all over the world who have not made correct investment in bettering hospitals, number of beds, 
+-- oxygen cylinders and had no responsive plan to combat pandemic's like Covid 19. This shows how ill prepared we as a species are 
+-- and in future if more life threatneing virus emerges we need to be better prepared. This has been a wake up call to governments 
+-- all over the world to prioritize people's health and make significant effort to increase health care. 
+
+-- People who were suffereing previously with diseases like diabetes, high blood pressure etc had higher death/infection percentage, 
+-- so as a society we need to choose healthy life by controling our food habits and exerciseing daily. For people who thought it 
+-- won't make any difference then have been proven wrong as covid 19 had lesser impact on people with healthy life choices.
 
 
 
