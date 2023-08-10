@@ -3,7 +3,4 @@ In the wake of the unprecedented global pandemic caused by the novel coronavirus
 
 Link to Tableau Dashboard for Covid19 analysis: https://public.tableau.com/app/profile/pranay.bhakthula/viz/Covid19Project_16910997312040/Dashboard1
 
-Data Sources :
-1) https://ourworldindata.org/covid-deaths
-2) https://data.worldbank.org/country/US
-3) https://fred.stlouisfed.org/series/ECOMPCTSA
+Data Source : https://ourworldindata.org/covid-deaths
